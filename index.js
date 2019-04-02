@@ -12,7 +12,7 @@ const manifest = {
     name: 'WonderfulSubs Anime',
     description: 'Anime from WonderfulSubs',
     resources: ['catalog', 'meta', 'stream'],
-    types: ['series'],
+    types: ['series', 'movie'],
     idPrefixes: ['kitsu:'],
     catalogs: [
       {
@@ -144,7 +144,7 @@ addon.defineStreamHandler(args => {
     const id = args.id
     const idParts = id.split(':')
     const kitsuId = idParts[1]
-    const episode = idParts[idParts.length -1] || null
+    const episode = idParts.length > 2 ? idParts[idParts.length -1] : 1
     db.map.get(kitsuId, wsId => {
       if (wsId) {
         needle.get('http://goxcors.appspot.com/cors?method=GET&url=' + encodeURIComponent(endpoint + 'series?series=' + wsId), { headers }, (err, resp, body) => {
