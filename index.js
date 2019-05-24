@@ -8,7 +8,7 @@ const package = require('./package')
 const manifest = {
     id: 'org.wonderfulsubs.anime',
     version: package.version,
-    logo: 'https://pbs.twimg.com/profile_images/1042973894347350016/SZDq-peE_200x200.jpg',
+    logo: 'https://kodi-addons.club/data/ec/ec0bac53d7da536db1723b40918fd379.png',
     name: 'WonderfulSubs Anime',
     description: 'Anime from WonderfulSubs',
     resources: ['catalog', 'meta', 'stream'],
